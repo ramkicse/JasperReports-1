@@ -1,0 +1,35 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+        
+        <h:form>
+            <h:commandButton value="PDF" actionListener="#{demoBean.PDF}"/>
+             <h:commandButton value="Docx" actionListener="#{demoBean.DOCX}"/>
+              <h:commandButton value="Xlsx" actionListener="#{demoBean.XLSX}"/>
+               <h:commandButton value="Odt" actionListener="#{demoBean.ODT}"/>
+               <h:commandButton value="Ppt" actionListener="#{demoBean.PPT}"/>
+        </h:form>
+        <h:dataTable border="1" value="#{demoBean.listOfUser}" var="user">
+            <h:column>
+                <f:facet name="header">
+                    User Name
+                </f:facet>
+                #{user.userId}
+            </h:column>
+            
+            <h:column>
+                <f:facet name="header">
+                    Password
+                </f:facet>
+                #{user.password}
+            </h:column>
+        </h:dataTable>
+    </h:body>
+</html>
+
